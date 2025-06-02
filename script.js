@@ -1,15 +1,14 @@
 // İsim havuzu
 const namePool = [
-  "Aleyna Tilki", "Edis", "Zeynep Bastik", "Merve Ozbey", "Simge", "Murda", "Hadise",
+  "Aleyna Tilki", "Edis", "Zeynep Bastık", "Merve Özbey", "Simge", "Murda", "Hadise",
   "Reynmen", "Mabel Matiz", "Sefo", "Ben Fero", "Uzi", "Ezhel", "Gazapizm", "Murat Boz",
-  "Gulsen", "Ilyas Yalcintas", "Emir Can Igrek", "Derya Ulug", "Serdar Ortac", "Gokhan Turkmen",
-  "Oguzhan Koc", "Yalin", "Sila", "Cagatay Ulusoy", "Burak Deniz", "Alina Boz", "Hande Ercel",
-  "Kerem Bursin", "Demet Ozdemir", "Caglar Ertugrul", "Engin Akyurek", "Serenay Sarikaya",
-  "Ibrahim Celikkol", "Fahriye Evcen", "Merve Bolugur", "Birce Akalay", "Alperen Duymaz",
-  "Ayca Aysin Turan", "Tolga Saritas", "Melisa Senolsun", "Asli Enver", "Ezgi Mola",
-  "Hazar Ergüclu", "Burak Ozcivit"
+  "Gülşen", "İlyas Yalçıntaş", "Emir Can İğrek", "Derya Uluğ", "Serdar Ortaç", "Gökhan Türkmen",
+  "Oğuzhan Koç", "Yalın", "Sıla", "Çağatay Ulusoy", "Burak Deniz", "Alina Boz", "Hande Erçel",
+  "Kerem Bürsin", "Demet Özdemir", "Çağlar Ertuğrul", "Engin Akyürek", "Serenay Sarıkaya",
+  "İbrahim Çelikkol", "Fahriye Evcen", "Merve Boluğur", "Birce Akalay", "Alperen Duymaz",
+  "Ayça Ayşin Turan", "Tolga Sarıtaş", "Melisa Şenolsun", "Aslı Enver", "Ezgi Mola",
+  "Hazar Ergüçlü", "Burak Özçivit"
 ];
-
 
 // Rastgele bir isim seç (boş olmayan)
 function getRandomName() {
@@ -22,7 +21,7 @@ function getRandomName() {
 
 // Roller
 const chosenName = getRandomName();
-let roles = [chosenName, chosenName, chosenName, "Impostor"];
+let roles = [chosenName, chosenName, chosenName, "İmpostor"];
 roles = shuffle(roles);
 
 const totalPlayers = roles.length;

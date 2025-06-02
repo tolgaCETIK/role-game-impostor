@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Rol Dağıtma Oyunu</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Rolünü Gör</h1>
+
+    <div id="buttons">
+        <button id="btn0" onclick="revealRole(0)">Oyuncu 1 Rolünü Gör</button>
+        <button id="btn1" onclick="revealRole(1)">Oyuncu 2 Rolünü Gör</button>
+        <button id="btn2" onclick="revealRole(2)">Oyuncu 3 Rolünü Gör</button>
+        <button id="btn3" onclick="revealRole(3)">Oyuncu 4 Rolünü Gör</button>
+    </div>
+
+    <div id="result"></div>
+
+    <div id="controls">
+        <button id="nextBtn" onclick="nextTurn()">Next</button>
+        <button id="resetBtn" onclick="location.reload()" style="display:none;">Yeniden Başlat</button>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>

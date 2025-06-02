@@ -1,0 +1,84 @@
+/* Genel */
+html, body {
+    height: 100%;
+    margin: 0; padding: 0;
+    background-color: #001f4d;
+    color: #ffdb00;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Başlık */
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Butonlar */
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-width: 400px;
+}
+
+button {
+    background-color: #ffdb00;
+    color: #001f4d;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 140px;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #a0a000;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #e6c800;
+}
+
+/* Rol sonucu */
+#result {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+    text-align: center;
+    min-width: 280px;
+}
+
+/* Kontrol butonları */
+#controls {
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    flex-wrap: wrap;
+}
+
+/* Responsive */
+@media(max-width: 480px) {
+    button {
+        min-width: 100%;
+        font-size: 18px;
+        padding: 14px 0;
+    }
+    #controls {
+        gap: 15px;
+    }
+}

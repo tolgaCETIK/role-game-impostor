@@ -44,21 +44,27 @@ function shuffle(array) {
     return array;
 }
 
+// script.js içinde revealRole fonksiyonunu şu şekilde güncelle:
 function revealRole(index) {
-    if (revealed[index]) return; // Zaten görmüşse engelle
-    if (currentViewerIndex !== null) return; // Aynı anda biri daha bakmasın
+    if (revealed[index] || currentViewerIndex !== null) return;
 
-    resultDiv.textContent = `Oyuncu ${index + 1} rolü: ${roles[index]}`;
+    const role = roles[index];
+    resultDiv.textContent = `Oyuncu ${index + 1} rolü: ${role}`;
+    resultDiv.className = role === "İmpostor" ? "impostor" : "";
+    
     buttons[index].disabled = true;
     revealed[index] = true;
     currentViewerIndex = index;
     nextBtn.disabled = false;
 }
 
+
 function nextTurn() {
     if (currentViewerIndex === null) return;
 
     resultDiv.textContent = "";
+    resultDiv.className = "";  // Burada tüm classları temizliyoruz
+
     currentViewerIndex = null;
     nextBtn.disabled = true;
     revealedCount++;
@@ -70,6 +76,13 @@ function nextTurn() {
     }
 }
 
+
 // İlk durumda next butonu devre dışı
 nextBtn.disabled = true;
 resetBtn.style.display = "none";
+
+// script.js içine şu fonksiyonu ekle:
+function startGame() {
+    document.getElementById("lobby").style.display = "none";
+    document.getElementById("gameArea").style.display = "block";
+}

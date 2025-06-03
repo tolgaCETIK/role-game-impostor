@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+
+ 
+  
+
+
+
 /* Genel */
 html, body {
     height: 100%;
@@ -19,7 +25,14 @@ html, body {
     align-items: center;
     padding: 15px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
+
+body {
+  overflow: hidden;
+  position: fixed;
+}
+
 
 /* Başlık */
 h1 {
@@ -172,6 +185,15 @@ button:hover {
 }
 
 
+@media (max-width: 600px) {
+  button {
+    font-size: 14px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+}
 
 
 

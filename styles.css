@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 /* Genel */
 html, body {
@@ -29,7 +34,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
     max-width: 500px;
 }
 
@@ -42,7 +47,8 @@ button {
     border: none;
     border-radius: 12px;
     cursor: pointer;
-    min-width: 160px;
+    min-width: 120px;
+    max-width: 160px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
@@ -57,6 +63,14 @@ button:disabled {
     color: #eee;
     cursor: not-allowed;
 }
+
+button:hover {
+  background-color: #555;
+  color: rgb(36, 36, 63);
+  transform: scale(1.05);
+  transition: 0.2s;
+}
+
 
 /* Rol sonucu */
 #result {
@@ -116,3 +130,49 @@ button:disabled {
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
+
+/* Ortak genişlik ve mobil uyum için */
+#lobby, #gameArea {
+  max-width: 480px; /* Oyun ekranı genişliği ile aynı */
+  width: 90vw; /* Mobilde ekranın %90’ını kaplasın */
+  margin: 20px auto; /* Ortalamak için yatayda otomatik boşluk */
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+#controls {
+  width: 100%;    /* max-width: 400px; bunu kaldır */
+  max-width: none;
+}
+
+
+
+#controls button {
+  margin: 0 10px;
+  padding: 10px 20px;
+}
+
+#buttons button {
+  min-width: 140px;          /* Butonlar en az bu genişlikte olacak */
+  max-width: 180px;          /* İstersen maksimum genişlik belirleyebilirsin */
+  padding: 8px 12px;         /* Buton içi boşluk */
+  height: 40px;
+  margin: 5px;
+  box-sizing: border-box;
+  
+  white-space: nowrap;       /* Metin tek satırda kalsın */
+  overflow: hidden;          /* Taşan kısmı gizle */
+  text-overflow: ellipsis;   /* Taşan metin ... ile gösterilir */
+  
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+
+
+
+

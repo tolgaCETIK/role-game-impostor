@@ -9,80 +9,127 @@ const namePool = [
   "Hazar Ergüçlü", "Burak Özçivit"
 ];
 
-function getRandomName() {
-    let name = "";
-    while(!name) {
-        name = namePool[Math.floor(Math.random() * namePool.length)];
-    }
-    return name;
-}
-
-const chosenName = getRandomName();
-let roles = [chosenName, chosenName, chosenName, "İmpostor"];
-roles = shuffle(roles);
-
-const totalPlayers = roles.length;
-let revealed = new Array(totalPlayers).fill(false); // Kim rolünü gördü
-let revealedCount = 0; // Kaç oyuncu rolünü gördü
-
-const buttons = [];
-for(let i = 0; i < totalPlayers; i++) {
-    buttons.push(document.getElementById(`btn${i}`));
-}
-
+const lobbyDiv = document.getElementById("lobby");
+const gameAreaDiv = document.getElementById("gameArea");
+const buttonsDiv = document.getElementById("buttons");
 const resultDiv = document.getElementById("result");
 const nextBtn = document.getElementById("nextBtn");
 const resetBtn = document.getElementById("resetBtn");
+const startBtn = document.getElementById("startBtn");
+const playerCountRange = document.getElementById("playerCountRange");
+const playerCountDisplay = document.getElementById("playerCountDisplay");
 
+let roles = [];
+let revealed = [];
+let revealedCount = 0;
 let currentViewerIndex = null;
 
+function getRandomName() {
+  return namePool[Math.floor(Math.random() * namePool.length)];
+}
+
 function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+  for (let i = array.length -1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i+1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
-// script.js içinde revealRole fonksiyonunu şu şekilde güncelle:
+function createButtons(count) {
+  buttonsDiv.innerHTML = "";  // Önceki butonları temizle
+  for(let i = 0; i < count; i++) {
+    const btn = document.createElement("button");
+    btn.id = "btn" + i;
+    btn.textContent = `Oyuncu ${i+1}`;
+    btn.onclick = () => revealRole(i);
+    buttonsDiv.appendChild(btn);
+  }
+}
+
 function revealRole(index) {
-    if (revealed[index] || currentViewerIndex !== null) return;
+  if (revealed[index] || currentViewerIndex !== null) return;
 
-    const role = roles[index];
-    resultDiv.textContent = `Oyuncu ${index + 1} rolü: ${role}`;
+  const role = roles[index];
+  const emoji = role === "İmpostor" ? "🔥" : "😊";
+
+  document.getElementById("btn" + index).disabled = true;
+  revealed[index] = true;
+  currentViewerIndex = index;
+  nextBtn.disabled = true;
+
+  resultDiv.textContent = "Rol yükleniyor...";
+  resultDiv.className = "";
+
+  // 1 saniye sonra gerçek rol gösterilsin
+  setTimeout(() => {
+    resultDiv.innerHTML = `Oyuncu ${index + 1} rolü: ${emoji} ${role}`;
     resultDiv.className = role === "İmpostor" ? "impostor" : "";
-    
-    buttons[index].disabled = true;
-    revealed[index] = true;
-    currentViewerIndex = index;
     nextBtn.disabled = false;
+  }, 1000);
 }
+
+
 
 
 function nextTurn() {
-    if (currentViewerIndex === null) return;
+  if (currentViewerIndex === null) return;
 
-    resultDiv.textContent = "";
-    resultDiv.className = "";  // Burada tüm classları temizliyoruz
+  resultDiv.textContent = "";
+  resultDiv.className = "";
+  currentViewerIndex = null;
+  nextBtn.disabled = true;
+  revealedCount++;
 
-    currentViewerIndex = null;
-    nextBtn.disabled = true;
-    revealedCount++;
-
-    if (revealedCount >= totalPlayers) {
-        resultDiv.textContent = "Tüm oyuncular rollerini gördü.";
-        nextBtn.style.display = "none";
-        resetBtn.style.display = "inline-block";
-    }
+  if (revealedCount >= roles.length) {
+    resultDiv.textContent = "Tüm oyuncular rollerini gördü.";
+    nextBtn.style.display = "none";
+    resetBtn.style.display = "inline-block";
+  }
 }
 
-
-// İlk durumda next butonu devre dışı
-nextBtn.disabled = true;
-resetBtn.style.display = "none";
-
-// script.js içine şu fonksiyonu ekle:
 function startGame() {
-    document.getElementById("lobby").style.display = "none";
-    document.getElementById("gameArea").style.display = "block";
+  const count = parseInt(playerCountRange.value);
+  if(count < 3 || count > 50) {
+    alert("Lütfen 3 ile 50 arasında bir oyuncu sayısı seçin.");
+    return;
+  }
+
+  lobbyDiv.style.display = "none";
+  gameAreaDiv.style.display = "block";
+
+  // Roller: 1 impostor, geri kalanlar aynı isimle dolduruluyor
+  const commonName = getRandomName();
+  roles = Array(count - 1).fill(commonName);
+  roles.push("İmpostor");
+  shuffle(roles);
+
+  revealed = new Array(count).fill(false);
+  revealedCount = 0;
+  currentViewerIndex = null;
+
+  createButtons(count);
+
+  resultDiv.textContent = "";
+  nextBtn.disabled = true;
+  nextBtn.style.display = "inline-block";
+  resetBtn.style.display = "none";
 }
+
+// Sayacı slider ile göster
+playerCountRange.addEventListener('input', () => {
+  playerCountDisplay.textContent = playerCountRange.value;
+});
+
+// Event listener'ları bağla
+startBtn.addEventListener("click", startGame);
+nextBtn.addEventListener("click", nextTurn);
+resetBtn.addEventListener("click", () => location.reload());
+
+// Başlangıçta bazı elementlerin görünümünü ayarla
+document.addEventListener('DOMContentLoaded', () => {
+  gameAreaDiv.style.display = "none";
+  nextBtn.style.display = "none";
+  resetBtn.style.display = "none";
+  playerCountDisplay.textContent = playerCountRange.value;
+});

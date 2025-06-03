@@ -10,33 +10,30 @@
 </head>
 
 <body>
-    <!-- index.html içine body'nin en başına ekle -->
-<div id="lobby" style="text-align:center;">
-    <h2>🎮 Rol Dağıtım Lobisi</h2>
+  <div id="lobby" style="text-align:center;">
+    <h2>🎮 Lobi</h2>
 
-</div>
-<div id="gameArea" style="display:none;">
-    <!-- mevcut tüm oyun HTML içeriğin (h1, buttons, result, controls) buraya taşınmalı -->
-</div>
+    <label for="playerCountRange" style="display:block; margin: 15px 0;">
+      Oyuncu sayısını seç: <span id="playerCountDisplay">4</span>
+    </label>
+    
+    <input type="range" id="playerCountRange" min="3" max="7" value="4" />
+    
+    <button id="startBtn" style="margin-top: 20px;">Başla</button>
+  </div>
 
+  <div id="gameArea" style="display:none;">
     <h1>Rolünü Gör</h1>
-
-    <div id="buttons">
-        <button id="btn0" onclick="revealRole(0)">Oyuncu 1 Rolünü Gör</button>
-        <button id="btn1" onclick="revealRole(1)">Oyuncu 2 Rolünü Gör</button>
-        <button id="btn2" onclick="revealRole(2)">Oyuncu 3 Rolünü Gör</button>
-        <button id="btn3" onclick="revealRole(3)">Oyuncu 4 Rolünü Gör</button>
-        
-
-    </div>
-
+    <div id="buttons"></div>
     <div id="result"></div>
-
     <div id="controls">
-        <button id="nextBtn" onclick="nextTurn()">Next</button>
-        <button id="resetBtn" onclick="location.reload()" style="display:none;">Yeniden Başlat</button>
+      <button id="nextBtn">Next</button>
+      <button id="resetBtn" style="display:none;">Yeniden Başlat</button>
     </div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
+
 </html>

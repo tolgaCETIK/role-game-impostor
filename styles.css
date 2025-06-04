@@ -5,76 +5,73 @@
   padding: 0;
 }
 
-
- 
-  
-
-
-
 /* Genel */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, #0f2027, #203a43, #1b313a);
-    color: #f5f5f5;
-    font-family: 'Poppins', sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #1D2331; /* koyu arkaplan */
+  /* linear-gradient yerine düz renk tercih ettim */
+  color: #8EFF01; /* genel yazı rengi */
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 }
 
 body {
   overflow: hidden;
   position: fixed;
+  touch-action: manipulation;
 }
-
 
 /* Başlık */
 h1 {
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 28px;
-    color: #ffcc00;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 28px;
+  color: #8EFF01; /* sarı yerine parlak yeşil vurgu */
 }
 
 /* Butonlar */
 #buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
 }
 
 button {
-    background-color: #ffcc00;
-    color: #1a1a1a;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    min-width: 120px;
-    max-width: 160px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s ease;
+  background-color: #8EFF01; /* yeni vurgu rengi */
+  color: #1D2331; /* koyu metin */
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  min-width: 120px;
+  max-width: 160px;
+  box-shadow: 0 4px 6px rgba(142, 255, 1, 0.4);
+  transition: all 0.3s ease;
 }
 
 button:hover:not(:disabled) {
-    background-color: #e6b800;
-    transform: scale(1.05);
+  background-color: #A9FF35; /* biraz daha parlak */
+  transform: scale(1.05);
 }
 
 button:disabled {
-    background-color: #999966;
-    color: #eee;
-    cursor: not-allowed;
+  background-color: #555C3E; /* koyu pasif renk */
+  color: #AAA;
+  cursor: not-allowed;
 }
 
 button:hover {
@@ -84,81 +81,63 @@ button:hover {
   transition: 0.2s;
 }
 
-
 /* Rol sonucu */
 #result {
-    margin-top: 25px;
-    font-size: 22px;
-    font-weight: bold;
-    min-height: 30px;
-    text-align: center;
-    min-width: 280px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 12px 20px;
-    border-radius: 10px;
-    box-shadow: inset 0 0 5px rgba(255,255,255,0.2);
+  margin-top: 25px;
+  font-size: 22px;
+  font-weight: bold;
+  min-height: 30px;
+  text-align: center;
+  min-width: 280px;
+  background-color: rgba(142, 255, 1, 0.1); /* açık yeşil vurgulu arka plan */
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(142, 255, 1, 0.3);
+  color: #8EFF01;
 }
 
-/* Kontrol butonları */
-#controls {
-    margin-top: 30px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-    flex-wrap: wrap;
-}
-
-/* Responsive */
-@media(max-width: 480px) {
-    button {
-        min-width: 100%;
-        font-size: 18px;
-        padding: 14px 0;
-    }
-    #controls {
-        gap: 15px;
-    }
-}
-
-/* styles.css içine ekle */
+/* İmpostor rolü için kırmızı vurgu */
 .impostor {
-    border: 4px solid red;
-    padding: 10px;
-    animation: shake 0.5s infinite;
-    color: red;
+  border: 4px solid #FF3838;
+  padding: 10px;
+  animation: shake 0.5s infinite;
+  color: #FF3838;
+  box-shadow: 0 0 12px #FF3838;
 }
 
+/* Shake animasyonu */
 @keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 /* Ortak genişlik ve mobil uyum için */
 #lobby, #gameArea {
-  max-width: 480px; /* Oyun ekranı genişliği ile aynı */
-  width: 90vw; /* Mobilde ekranın %90’ını kaplasın */
-  margin: 20px auto; /* Ortalamak için yatayda otomatik boşluk */
+  max-width: 480px;
+  width: 90vw;
+  margin: 20px auto;
   box-sizing: border-box;
   padding: 15px;
 }
 
 #controls {
-  width: 100%;    /* max-width: 400px; bunu kaldır */
+  width: 100%;
   max-width: none;
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
-
 
 #controls button {
   margin: 0 10px;
@@ -166,16 +145,16 @@ button:hover {
 }
 
 #buttons button {
-  min-width: 140px;          /* Butonlar en az bu genişlikte olacak */
-  max-width: 180px;          /* İstersen maksimum genişlik belirleyebilirsin */
-  padding: 8px 12px;         /* Buton içi boşluk */
+  min-width: 140px;
+  max-width: 180px;
+  padding: 8px 12px;
   height: 40px;
   margin: 5px;
   box-sizing: border-box;
   
-  white-space: nowrap;       /* Metin tek satırda kalsın */
-  overflow: hidden;          /* Taşan kısmı gizle */
-  text-overflow: ellipsis;   /* Taşan metin ... ile gösterilir */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   
   display: inline-block;
   text-align: center;
@@ -183,7 +162,6 @@ button:hover {
 
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 
 @media (max-width: 600px) {
   button {
@@ -195,6 +173,13 @@ button:hover {
   }
 }
 
-
-
-
+@media(max-width: 480px) {
+  button {
+    min-width: 100%;
+    font-size: 18px;
+    padding: 14px 0;
+  }
+  #controls {
+    gap: 15px;
+  }
+}

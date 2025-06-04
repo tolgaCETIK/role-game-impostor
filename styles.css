@@ -59,7 +59,7 @@ button {
   cursor: pointer;
   min-width: 120px;
   max-width: 160px;
-  box-shadow: 0 4px 6px rgba(142, 255, 1, 0.4);
+  box-shadow: 1px 1px 1px 1px #8D53FE;
   transition: all 0.3s ease;
 }
 
@@ -69,13 +69,13 @@ button:hover:not(:disabled) {
 }
 
 button:disabled {
-  background-color: #555C3E; /* koyu pasif renk */
+  background-color: #8D53FE; /* koyu pasif renk */
   color: #AAA;
   cursor: not-allowed;
 }
 
 button:hover {
-  background-color: #555;
+  background-color: #8D53FE;
   color: rgb(36, 36, 63);
   transform: scale(1.05);
   transition: 0.2s;
@@ -107,18 +107,19 @@ button:hover {
 
 /* Shake animasyonu */
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
+  10% { transform: translate(-0.5px, -1px) rotate(-0.3deg); }
+  20% { transform: translate(-1.5px, 0px) rotate(0.3deg); }
+  30% { transform: translate(1.5px, 1px) rotate(0deg); }
+  40% { transform: translate(0.5px, -0.5px) rotate(0.3deg); }
+  50% { transform: translate(-0.5px, 1px) rotate(-0.3deg); }
+  60% { transform: translate(-1.5px, 0.5px) rotate(0deg); }
+  70% { transform: translate(1.5px, 0.5px) rotate(-0.3deg); }
+  80% { transform: translate(-0.5px, -0.5px) rotate(0.3deg); }
+  90% { transform: translate(0.5px, 1px) rotate(0deg); }
+  100% { transform: translate(0.5px, -1px) rotate(-0.3deg); }
 }
+
 
 /* Ortak genişlik ve mobil uyum için */
 #lobby, #gameArea {
@@ -128,6 +129,48 @@ button:hover {
   box-sizing: border-box;
   padding: 15px;
 }
+
+/* Lobide başlıklar ve seçimler arasındaki boşluklar */
+#lobby h2, 
+#lobby label {
+  margin-bottom: 15px; /* Başlık ve label alt boşluk */
+  color: #8EFF01; /* Vurgu rengi */
+  font-weight: 600;
+}
+
+/* Sayı seçimi scroll ve buton arasındaki boşluğu artır */
+#lobby select {
+  margin-bottom: 25px; /* Butonlarla scroll arasına daha fazla boşluk */
+  padding: 8px 12px;
+  border: 2px solid #8D53FE;
+  border-radius: 8px;
+  background-color: #1D2331;
+  color: #cacaca;
+  appearance: none; /* Tarayıcı varsayılan okunu gizle */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Scrollbar temaya uygun (yalnızca webkit tabanlı tarayıcılar için) */
+#lobby select::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+#lobby select::-webkit-scrollbar-track {
+  background: #1D2331;
+  border-radius: 8px;
+}
+
+#lobby select::-webkit-scrollbar-thumb {
+  background-color: #8EFF01;
+  border-radius: 8px;
+  border: 2px solid #1D2331;
+}
+
+
+
 
 #controls {
   width: 100%;
@@ -183,3 +226,213 @@ button:hover {
     gap: 15px;
   }
 }
+
+/* Mobilde boşlukları biraz daha artır */
+@media (max-width: 480px) {
+  #lobby h2,
+  #lobby label {
+    margin-bottom: 25px;
+  }
+
+  #lobby select {
+    margin-bottom: 35px;
+  }
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #1D2331;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+/* Track */
+input[type=range]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: #8EFF01;
+  border-radius: 5px;
+}
+
+input[type=range]::-moz-range-track {
+  height: 8px;
+  background: #1D2331;
+  border-radius: 5px;
+}
+
+/* Thumb */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #8EFF01;
+  border-radius: 50%;
+  border: 2px solid #1D2331;
+  margin-top: -6px;
+  transition: background-color 0.3s ease;
+}
+
+input[type=range]:hover::-webkit-slider-thumb {
+  background: #b8ff4d;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #8EFF01;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: background-color 0.3s ease;
+}
+
+input[type=range]:hover::-moz-range-thumb {
+  background: #b8ff4d;
+}
+
+#buttons {
+  margin-bottom: 20px; /* veya istediğin boşluk */
+}
+
+#categorySelect {
+  appearance: none;           /* Native stil iptal edilir */
+  background-color: #1e1e2f;  /* Arka plan */
+  color: #b8ff4d;             /* Yazı rengi */
+  font-family: 'Segoe UI', sans-serif;
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 200px;
+}
+
+
+#categorySelect:hover,
+#categorySelect:focus {
+  border-color: #6c63ff; /* Tema rengine uygun vurgu */
+  outline: none;
+  background-color: #2a2a3d;
+}
+
+label[for="categorySelect"] {
+  color: #c52020;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+#categorySelect option {
+  background-color: #1e1e2f;
+  color: #b8ff4d;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 220px;
+  font-family: 'Segoe UI', sans-serif;
+  user-select: none;
+  margin-bottom: 20px;
+}
+
+.selected {
+  background-color: #1e1e2f;
+  color: #d43636;
+  padding: 10px;
+  border: 2px solid #444;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1e1e2f;
+  border: 2px solid #444;
+  border-radius: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 10;
+}
+
+.dropdown-options li {
+  padding: 10px;
+  color: #f1f1f1;
+  cursor: pointer;
+}
+
+.dropdown-options li:hover {
+  background-color: #333;
+}
+
+.custom-dropdown.active .dropdown-options {
+  max-height: 300px;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 240px;
+  font-family: 'Segoe UI', sans-serif;
+  user-select: none;
+  margin-bottom: 50px;
+}
+
+.selected {
+  background-color: #282c34;
+  color: #b8ff4d;
+  padding: 12px;
+  border: 2px solid #b8ff4d;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #1e1e2f;
+  border: 2px solid #b8ff4d;
+  border-radius: 0 0 10px 10px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  z-index: 100;
+}
+
+.dropdown-options li {
+  padding: 10px;
+  color: #b8ff4d;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-options li:hover {
+  background-color: #b8ff4d;
+  color: #000;
+}
+
+.custom-dropdown.active .dropdown-options {
+  max-height: 300px;
+}
+
+.selected, .dropdown-options li {
+  font-size: 16px;      /* Başla ve label ile aynı */
+  font-weight: 600;     /* Kalınlık eşleşiyor */
+  font-family: 'Segoe UI', sans-serif;
+}
+

@@ -1,18 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-    * {
+* {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    /* Genel */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      background-color: #1D2331; /* koyu arkaplan */
-      /* linear-gradient yerine düz renk tercih ettim */
-      color: #8EFF01; /* genel yazı rengi */
+      background-color: #1D2331;
+      color: #8EFF01;
       font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
@@ -31,26 +28,25 @@
       touch-action: manipulation;
     }
 
-    /* Başlık */
     h1 {
       margin-bottom: 20px;
       text-align: center;
       font-size: 28px;
-      color: #8EFF01; /* sarı yerine parlak yeşil vurgu */
+      color: #8EFF01;
     }
 
-    /* Butonlar */
     #buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
       max-width: 500px;
+      margin-bottom: 20px;
     }
 
     button {
-      background-color: #8EFF01; /* yeni vurgu rengi */
-      color: #1D2331; /* koyu metin */
+      background-color: #8EFF01;
+      color: #1D2331;
       font-weight: 600;
       font-size: 16px;
       padding: 12px 20px;
@@ -64,24 +60,18 @@
     }
 
     button:hover:not(:disabled) {
-      background-color: #A9FF35; /* biraz daha parlak */
-      transform: scale(1.05);
-    }
-
-    button:disabled {
-      background-color: #8D53FE; /* koyu pasif renk */
-      color: #AAA;
-      cursor: not-allowed;
-    }
-
-    button:hover {
       background-color: #8D53FE;
       color: rgb(36, 36, 63);
       transform: scale(1.05);
       transition: 0.2s;
     }
 
-    /* Rol sonucu */
+    button:disabled {
+      background-color: #8D53FE;
+      color: #AAA;
+      cursor: not-allowed;
+    }
+
     #result {
       margin-top: 25px;
       font-size: 22px;
@@ -89,14 +79,13 @@
       min-height: 30px;
       text-align: center;
       min-width: 280px;
-      background-color: rgba(142, 255, 1, 0.1); /* açık yeşil vurgulu arka plan */
+      background-color: rgba(142, 255, 1, 0.1);
       padding: 12px 20px;
       border-radius: 10px;
       box-shadow: inset 0 0 5px rgba(142, 255, 1, 0.3);
       color: #8EFF01;
     }
 
-    /* İmpostor rolü için kırmızı vurgu */
     .impostor {
       border: 4px solid #FF3838;
       padding: 10px;
@@ -105,7 +94,6 @@
       box-shadow: 0 0 12px #FF3838;
     }
 
-    /* Farklı isim için mavi vurgu */
     .different-name {
       border: 4px solid #3B82F6;
       padding: 10px;
@@ -114,7 +102,6 @@
       box-shadow: 0 0 12px #3B82F6;
     }
 
-    /* Shake animasyonu */
     @keyframes shake {
       0% { transform: translate(0.5px, 0.5px) rotate(0deg); }
       10% { transform: translate(-0.5px, -1px) rotate(-0.3deg); }
@@ -129,13 +116,11 @@
       100% { transform: translate(0.5px, -1px) rotate(-0.3deg); }
     }
 
-    /* Glow animasyonu */
     @keyframes glow {
       0% { box-shadow: 0 0 12px #3B82F6; }
       100% { box-shadow: 0 0 20px #3B82F6, 0 0 30px #3B82F6; }
     }
 
-    /* Ortak genişlik ve mobil uyum için */
     #lobby, #gameArea {
       max-width: 480px;
       width: 90vw;
@@ -144,43 +129,10 @@
       padding: 15px;
     }
 
-    /* Lobide başlıklar ve seçimler arasındaki boşluklar */
-    #lobby h2, 
-    #lobby label {
-      margin-bottom: 15px; /* Başlık ve label alt boşluk */
-      color: #8EFF01; /* Vurgu rengi */
+    #lobby h2, #lobby label {
+      margin-bottom: 15px;
+      color: #8EFF01;
       font-weight: 600;
-    }
-
-    /* Sayı seçimi scroll ve buton arasındaki boşluğu artır */
-    #lobby select {
-      margin-bottom: 25px; /* Butonlarla scroll arasına daha fazla boşluk */
-      padding: 8px 12px;
-      border: 2px solid #8D53FE;
-      border-radius: 8px;
-      background-color: #1D2331;
-      color: #cacaca;
-      appearance: none; /* Tarayıcı varsayılan okunu gizle */
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      cursor: pointer;
-    }
-
-    /* Scrollbar temaya uygun (yalnızca webkit tabanlı tarayıcılar için) */
-    #lobby select::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-
-    #lobby select::-webkit-scrollbar-track {
-      background: #1D2331;
-      border-radius: 8px;
-    }
-
-    #lobby select::-webkit-scrollbar-thumb {
-      background-color: #8EFF01;
-      border-radius: 8px;
-      border: 2px solid #1D2331;
     }
 
     #controls {
@@ -205,49 +157,13 @@
       height: 40px;
       margin: 5px;
       box-sizing: border-box;
-      
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      
       display: inline-block;
       text-align: center;
       vertical-align: middle;
-
       transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    @media (max-width: 600px) {
-      button {
-        font-size: 14px;
-      }
-
-      #result {
-        font-size: 16px;
-      }
-    }
-
-    @media(max-width: 480px) {
-      button {
-        min-width: 100%;
-        font-size: 18px;
-        padding: 14px 0;
-      }
-      #controls {
-        gap: 15px;
-      }
-    }
-
-    /* Mobilde boşlukları biraz daha artır */
-    @media (max-width: 480px) {
-      #lobby h2,
-      #lobby label {
-        margin-bottom: 25px;
-      }
-
-      #lobby select {
-        margin-bottom: 35px;
-      }
     }
 
     input[type=range] {
@@ -261,20 +177,12 @@
       margin: 15px 0;
     }
 
-    /* Track */
     input[type=range]::-webkit-slider-runnable-track {
       height: 8px;
       background: #8EFF01;
       border-radius: 5px;
     }
 
-    input[type=range]::-moz-range-track {
-      height: 8px;
-      background: #1D2331;
-      border-radius: 5px;
-    }
-
-    /* Thumb */
     input[type=range]::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -291,32 +199,31 @@
       background: #b8ff4d;
     }
 
-    input[type=range]::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      background: #8EFF01;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      transition: background-color 0.3s ease;
+    /* DROPDOWN STİLLERİ - SORUN ÇÖZÜMÜ */
+    .dropdown-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0 60px 0; /* Alt boşluğu artırdık */
+      position: relative;
+      z-index: 2000; /* Yüksek z-index */
     }
 
-    input[type=range]:hover::-moz-range-thumb {
-      background: #b8ff4d;
+    .game-mode-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0;
+      position: relative;
+      z-index: 1900; /* Kategori dropdown'dan düşük */
     }
 
-    #buttons {
-      margin-bottom: 20px; /* veya istediğin boşluk */
-    }
-
-    .custom-dropdown {
-       position: relative;
+    .custom-dropdown, .game-mode-dropdown {
+      position: relative;
       width: 260px;
       font-family: 'Segoe UI', sans-serif;
       user-select: none;
-      margin-bottom: 20px;
     }
 
-    .selected {
+    .selected, .game-mode-selected {
       background-color: #282c34;
       color: #8EFF01;
       padding: 12px;
@@ -326,26 +233,28 @@
       text-align: center;
       font-size: 16px;
       font-weight: 600;
-      
-    }
+     }
 
-   
-    .dropdown-options {
+    .dropdown-options, .game-mode-options {
       position: absolute;
       top: 100%;
       left: 0;
       width: 100%;
       background-color: #1e1e2f;
       border: 2px solid #8EFF01;
-      border-radius: 0 0 10px 10px;
+      border-radius: 10px 10px 10px 10px;
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.3s ease;
-      z-index: 100;
+      z-index: 2001; /* Çok yüksek z-index */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+       border-top: none !important;
+  box-shadow: none !important;
+  outline: none !important;
       
     }
 
-    .dropdown-options li {
+    .dropdown-options li, .game-mode-options li {
       padding: 12px;
       color: #8EFF01;
       cursor: pointer;
@@ -353,10 +262,10 @@
       transition: background-color 0.2s ease;
       font-size: 14px;
       line-height: 1.3;
-      
+      list-style: none;
     }
 
-    .dropdown-options li:hover {
+    .dropdown-options li:hover, .game-mode-options li:hover {
       background-color: #8EFF01;
       color: #000;
     }
@@ -365,110 +274,48 @@
       max-height: 300px;
     }
 
-    .dropdown-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .selected, .dropdown-options li {
-      font-size: 16px;      /* Başla ve label ile aynı */
-      font-weight: 600;     /* Kalınlık eşleşiyor */
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    /* Oyun türü seçimi için ek stiller */
-    .game-mode-wrapper {
-      display: flex;
-      justify-content: center;
-      margin: 20px 0;
-    }
-
-    .game-mode-dropdown {
-      position: relative;
-      width: 260px;
-      font-family: 'Segoe UI', sans-serif;
-      user-select: none;
-      margin-bottom: 20px;
-    }
-
-    .game-mode-selected {
-      background-color: #282c34;
-      color: #8EFF01;
-      padding: 12px;
-      border: 2px solid #8EFF01;
-      border-radius: 10px;
-      cursor: pointer;
-      text-align: center;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .game-mode-options {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #1e1e2f;
-      border: 2px solid #8EFF01;
-      border-radius: 0 0 10px 10px;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      z-index: 100;
-        
-
-    }
-
-    .game-mode-options li {
-      padding: 12px;
-      color: #8EFF01;
-      cursor: pointer;
-      text-align: center;
-      transition: background-color 0.2s ease;
-      font-size: 14px;
-      line-height: 1.3;
-      
-    }
-
-    .game-mode-options li:hover {
-      background-color: #b8ff4d;
-      color: #000;
-    }
-
     .game-mode-dropdown.active .game-mode-options {
       max-height: 200px;
-      
     }
 
-   .custom-dropdown,
-.custom-dropdown,
-.custom-dropdown .dropdown-options,
-.game-mode-dropdown,
-.game-mode-dropdown,
-.game-mode-dropdown .game-mode-options {
-  border: none !important;
+    .game-mode-options li small {
+      font-size: 12px;
+    }
 
-}
+    #blurOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(5px);
+      z-index: 1800; /* Dropdown'lardan düşük */
+      display: none;
+    }
 
-.game-mode-dropdown,
-.game-mode-dropdown .game-mode-selected,
-.game-mode-dropdown .game-mode-options,
-.game-mode-dropdown .game-mode-options li {
-  font-family: 'Arial', sans-serif;
-  font-size: 16px; /* Mod dropdown'un ana yazı tipi ve boyutu */
-}
+    @media (max-width: 600px) {
+      button {
+        font-size: 14px;
+      }
+      #result {
+        font-size: 16px;
+      }
+    }
 
-/* Small tag içindeki yazı için */
-.game-mode-dropdown .game-mode-options li small {
-  font-size: 12px; /* Küçük açıklamalar için daha küçük font */
-}
-
-#blurOverlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(255, 255, 255, 0); /* biraz beyaz yarı şeffaf */
-  backdrop-filter: blur(5px);
-  z-index: 10; /* dropdownlardan önce, arka planda */
-}
-
+    @media(max-width: 480px) {
+      button {
+        min-width: 100%;
+        font-size: 18px;
+        padding: 14px 0;
+      }
+      #controls {
+        gap: 15px;
+      }
+      #lobby h2, #lobby label {
+        margin-bottom: 25px;
+      }
+      .dropdown-wrapper {
+        margin: 30px 0 80px 0; /* Mobilde daha fazla boşluk */
+      }
+    }

@@ -13,30 +13,37 @@
   <div id="lobby" style="text-align:center;">
     <h2>🎮 <br> Lobi</h2>
 
- <div class="dropdown-wrapper">
-  <div class="custom-dropdown" id="customDropdown">
-    <div class="selected">Kategori seçin</div>
-    <ul class="dropdown-options">
-      <li data-value="all">Hepsi</li>
-      <li data-value="singers">Şarkıcılar</li>
-      <li data-value="actors">Oyuncular</li>
-      <li data-value="influencers">Sosyal Medya Fenomenleri</li>
-    </ul>
+    <div class="dropdown-wrapper">
+      <div class="custom-dropdown" id="customDropdown">
+        <div class="selected">Kategori seçin</div>
+        <ul class="dropdown-options">
+          <li data-value="all">Hepsi</li>
+          <li data-value="singers">Şarkıcılar</li>
+          <li data-value="actors">Oyuncular</li>
+          <li data-value="influencers">Sosyal Medya Fenomenleri</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="game-mode-wrapper">
+      <div class="game-mode-dropdown" id="gameModeDropdown">
+        <div class="game-mode-selected">Mod</div>
+        <ul class="game-mode-options">
+          <li data-value="impostor">İmpostor Modu<br><small>(1 impostor + diğerlerine aynı isim)</small></li>
+          <li data-value="different">Farklı İsim Modu<br><small>(1 kişiye farklı isim + diğerlerine aynı isim)</small></li>
+        </ul>
+      </div>
+    </div>
+
+    <br><br>
+
+    <label for="playerCountRange">Oyuncu sayısı: <span id="playerCountDisplay">5</span></label>
+    <input type="range" id="playerCountRange" min="3" max="10" value="5">
+
+    <br><br>
+
+    <button id="startBtn">Başla</button>
   </div>
-</div>
-
-
-
-  <br><br>
-
-  <label for="playerCountRange">Oyuncu sayısı: <span id="playerCountDisplay">5</span></label>
-  <input type="range" id="playerCountRange" min="3" max="10" value="5">
-
-  <br><br>
-
-  <button id="startBtn">Başla</button>
-</div>
-
 
   <div id="gameArea" style="display:none;">
     <h1>Rolünü Gör</h1>
@@ -47,10 +54,14 @@
       <button id="resetBtn" style="display:none;">Yeniden Başlat</button>
     </div>
   </div>
-<div id="buttons">
-  <!-- Oyuncu butonları buraya JS ile geliyor -->
-  <button id="lobbyBtn" style="display:none; margin-top: 20px;">Lobiye Dön</button>
-</div>
+  
+  <div id="buttons">
+    <!-- Oyuncu butonları buraya JS ile geliyor -->
+    <button id="lobbyBtn" style="display:none; margin-top: 20px;">Lobiye Dön</button>
+  </div>
+
+  <div id="blurOverlay" style="display:none;"></div>
+
 
   <script src="script.js"></script>
 </body>

@@ -1,23 +1,49 @@
  const namePools = {
-      singers: [
-        "Aleyna Tilki", "Edis", "Zeynep Bastık", "Merve Özbey", "Simge", "Murda", "Hadise",
-        "Reynmen", "Mabel Matiz", "Sefo", "Ben Fero", "Uzi", "Ezhel", "Gazapizm", "Murat Boz",
-        "Gülşen", "İlyas Yalçıntaş", "Emir Can İğrek", "Derya Uluğ", "Serdar Ortaç", "Gökhan Türkmen"
-      ],
-      actors: [
-        "Çağatay Ulusoy", "Burak Deniz", "Alina Boz", "Hande Erçel",
-        "Kerem Bürsin", "Demet Özdemir", "Çağlar Ertuğrul", "Engin Akyürek", "Serenay Sarıkaya",
-        "İbrahim Çelikkol", "Fahriye Evcen", "Merve Boluğur", "Birce Akalay", "Alperen Duymaz",
-        "Ayça Ayşin Turan", "Tolga Sarıtaş", "Melisa Şenolsun", "Aslı Enver", "Ezgi Mola",
-        "Hazar Ergüçlü", "Burak Özçivit", "Tolga Çevik", "Cem Yılmaz"
-      ],
-      influencers: [
-        "Kerimcan Durmaz", "Orkun Işıtmak", "Enes Batur", "CZN Burak", "Danla Bilic", "Merve Özkaynak", 
-        "Reynmen", "Ruhi Çenet", "Cemre Solmaz", "Burak Oyunda", "Duygu Özaslan", "Kafalar", 
-        "Barış Özcan", "Berkcan Güven", "Pqueen", "Nihal Candan", "Yasemin Sakallıoğlu", "Nusret", "Ece Seçkin", "Berfu Yıldız"
-      ]
-    };
-    namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influencers];
+  singers: [
+    "Aleyna Tilki", "Edis", "Zeynep Bastık", "Merve Özbey", "Simge",
+    "Murda", "Hadise", "Reynmen", "Mabel Matiz", "Sefo",
+    "Ben Fero", "Uzi", "Ezhel", "Gazapizm", "Murat Boz",
+    "Gülşen", "İlyas Yalçıntaş", "Emir Can İğrek", "Derya Uluğ", "Serdar Ortaç",
+    "Gökhan Türkmen", "Melike Şahin", "Melek Mosso", "Sıla", "Buray",
+    "Yalın", "Oğuzhan Koç", "Motive", "Lvbel C5", "Ceza",
+    "Taylor Swift", "Billie Eilish", "Ariana Grande", "Dua Lipa", "Doja Cat",
+    "Olivia Rodrigo", "Selena Gomez", "Lana Del Rey", "Rihanna", "Beyoncé",
+    "Nicki Minaj", "Camila Cabello", "The Weeknd", "Justin Bieber", "Harry Styles",
+    "Travis Scott", "Shawn Mendes", "Bruno Mars", "Rosé", "Jennie",
+    "Lisa", 
+  ],
+
+  actors: [
+    "Çağatay Ulusoy", "Burak Deniz", "Alina Boz", "Hande Erçel",
+    "Kerem Bürsin", "Demet Özdemir", "Çağlar Ertuğrul", "Engin Akyürek", "Serenay Sarıkaya",
+    "İbrahim Çelikkol", "Fahriye Evcen", "Merve Boluğur", "Birce Akalay", "Alperen Duymaz",
+    "Ayça Ayşin Turan", "Tolga Sarıtaş", "Melisa Şenolsun", "Aslı Enver", "Ezgi Mola",
+    "Hazar Ergüçlü", "Burak Özçivit", "Tolga Çevik", "Cem Yılmaz",
+    "Kıvanç Tatlıtuğ", "Engin Altan Düzyatan", "Barış Arduç", "Hazal Kaya", "Elçin Sangu",
+    "Özge Gürel", "Serkan Çayoğlu", "Meryem Uzerli", "Halit Ergenç",
+    "Kenan İmirzalıoğlu", "Tuba Büyüküstün", "Burcu Biricik", "Gökçe Bahadır",
+    "Timothée Chalamet", "Zendaya", "Tom Holland",
+    "Chris Hemsworth", "Scarlett Johansson", "Robert Downey Jr.", "Jennifer Lawrence", "Leonardo DiCaprio",
+    "Brad Pitt", "Angelina Jolie", "Gal Gadot", "Ryan Reynolds", "Margot Robbie",
+    "Dwayne Johnson", "Emma Stone", "Chris Evans", "Natalie Portman", "Will Smith", "Miray Daner", "Sümeyye Erdoğan",
+     "Afra Saraçoğlu", "Bensu Soral", "Pelin Akil", "Gizem Karaca",
+      "Alp Navruz", "İlayda Akdoğan", "Sinem Ünsal", "Ahsen Eroğlu"
+
+  ],
+
+  influencers: [
+    "Kerimcan Durmaz", "Orkun Işıtmak", "Enes Batur", "CZN Burak", "Danla Bilic",
+    "Merve Özkaynak", "Ruhi Çenet", "Cemre Solmaz", "Burak Oyunda", "Duygu Özaslan",
+    "Kafalar", "Barış Özcan", "Berkcan Güven", "Pqueen", "Nihal Candan",
+    "Yasemin Sakallıoğlu", "Nusret", "Ece Seçkin", "Berfu Yenenler",
+    "Mustafa Kemal Atatürk", "Recep Tayyip Erdoğan", "Fatih Sultan Mehmet", "Kenan Sofuoğlu", "Arda Güler",
+    "Kenan Yıldız", "Cristiano Ronaldo", "Lionel Messi", "LeBron James", "Michael Jordan",
+    "David Beckham", "Emmanuel Macron", "Donald Trump", "Elon Musk", "Jeff Bezos",
+    "Bill Gates", "Mark Zuckerberg", "Ali Koç", "Benim adım Neargiss", "İdil Yazar", "Refika", "Acun", "Kanka Youtube'dasın", "Zebani Efe", "Mika Raun", "Limonlu Limonlu" 
+  ]
+};
+
+namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influencers];
 
     // DOM elementleri
     const lobbyDiv = document.getElementById("lobby");

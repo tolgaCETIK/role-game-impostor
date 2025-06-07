@@ -94,13 +94,13 @@
       box-shadow: 0 0 12px #FF3838;
     }
 
-    .different-name {
-      border: 4px solid #3B82F6;
-      padding: 10px;
-      animation: glow 1s infinite alternate;
-      color: #3B82F6;
-      box-shadow: 0 0 12px #3B82F6;
-    }
+    /*   .different-name {
+        border: 4px solid #3B82F6;
+        padding: 10px;
+        animation: glow 1s infinite alternate;
+        color: #3B82F6;
+        box-shadow: 0 0 12px #3B82F6;
+      } */
 
     @keyframes shake {
       0% { transform: translate(0.5px, 0.5px) rotate(0deg); }

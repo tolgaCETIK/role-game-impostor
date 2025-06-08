@@ -10,7 +10,7 @@
 </head>
 
 <body>
-   <div id="lobby" style="text-align:center;">
+  <div id="lobby" style="text-align:center;">
     <h2>🎮 <br> Lobi</h2>
 
     <div class="dropdown-wrapper">
@@ -29,8 +29,9 @@
       <div class="game-mode-dropdown" id="gameModeDropdown">
         <div class="game-mode-selected">Mod</div>
         <ul class="game-mode-options">
-          <li data-value="impostor">İmpostor Modu<br><small>(1 impostor + diğerlerine aynı isim)</small></li>
-          <li data-value="different">Farklı İsim Modu<br><small>(1 kişiye farklı isim + diğerlerine aynı isim)</small></li>
+          <li data-value="impostor">İmpostor Modu<br><small>(1 impostor + Diğerleri aynı)</small></li>
+          <li data-value="different">Farklı İsim<br><small>(1 kişiye farklı + Diğerleri aynı)</small></li>
+          <li data-value="everyone-different">Karmaşa<br><small>(Herkese farklı isim, Tahmin et)</small></li>
         </ul>
       </div>
     </div>
@@ -39,6 +40,13 @@
 
     <label for="playerCountRange">Oyuncu sayısı: <span id="playerCountDisplay">5</span></label>
     <input type="range" id="playerCountRange" min="3" max="10" value="5">
+
+    <br><br>
+
+    <div id="impostorCountWrapper" style="display:none; margin: 20px 0;">
+      <label for="impostorCountRange">İmpostor sayısı: <span id="impostorCountDisplay">1</span></label>
+      <input type="range" id="impostorCountRange" min="1" max="3" value="1">
+    </div>
 
     <br><br>
 
@@ -54,12 +62,13 @@
       <button id="resetBtn" style="display:none;">Yeniden Başlat</button>
     </div>
   </div>
-  
+
   <div id="buttons">
     <button id="lobbyBtn" style="display:none; margin-top: 20px;">Lobiye Dön</button>
   </div>
 
   <div id="blurOverlay" style="display:none;"></div>
+
 
 
   <script src="script.js"></script>

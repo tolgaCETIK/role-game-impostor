@@ -1,49 +1,48 @@
- const namePools = {
-  singers: [
-    "Aleyna Tilki", "Edis", "Zeynep Bastık", "Merve Özbey", "Simge",
-    "Murda", "Hadise", "Reynmen", "Mabel Matiz", "Sefo",
-    "Ben Fero", "Uzi", "Ezhel", "Gazapizm", "Murat Boz",
-    "Gülşen", "İlyas Yalçıntaş", "Emir Can İğrek", "Derya Uluğ", "Serdar Ortaç",
-    "Gökhan Türkmen", "Melike Şahin", "Melek Mosso", "Sıla", "Buray",
-    "Yalın", "Oğuzhan Koç", "Motive", "Lvbel C5", "Ceza",
-    "Taylor Swift", "Billie Eilish", "Ariana Grande", "Dua Lipa", "Doja Cat",
-    "Olivia Rodrigo", "Selena Gomez", "Lana Del Rey", "Rihanna", "Beyoncé",
-    "Nicki Minaj", "Camila Cabello", "The Weeknd", "Justin Bieber", "Harry Styles",
-    "Travis Scott", "Shawn Mendes", "Bruno Mars", "Rosé", "Jennie",
-    "Lisa", 
-  ],
+const namePools = {
+      singers: [
+        "Aleyna Tilki", "Edis", "Zeynep Bastık", "Merve Özbey", "Simge",
+        "Murda", "Hadise", "Reynmen", "Mabel Matiz", "Sefo",
+        "Ben Fero", "Uzi", "Ezhel", "Gazapizm", "Murat Boz",
+        "Gülşen", "İlyas Yalçıntaş", "Emir Can İğrek", "Derya Uluğ", "Serdar Ortaç",
+        "Gökhan Türkmen", "Melike Şahin", "Melek Mosso", "Sıla", "Buray",
+        "Yalın", "Oğuzhan Koç", "Motive", "Lvbel C5", "Ceza",
+        "Taylor Swift", "Billie Eilish", "Ariana Grande", "Dua Lipa", "Doja Cat",
+        "Olivia Rodrigo", "Selena Gomez", "Lana Del Rey", "Rihanna", "Beyoncé",
+        "Nicki Minaj", "Camila Cabello", "The Weeknd", "Justin Bieber", "Harry Styles",
+        "Travis Scott", "Shawn Mendes", "Bruno Mars", "Rosé", "Jennie",
+        "Lisa",
+      ],
 
-  actors: [
-    "Çağatay Ulusoy", "Burak Deniz", "Alina Boz", "Hande Erçel",
-    "Kerem Bürsin", "Demet Özdemir", "Çağlar Ertuğrul", "Engin Akyürek", "Serenay Sarıkaya",
-    "İbrahim Çelikkol", "Fahriye Evcen", "Merve Boluğur", "Birce Akalay", "Alperen Duymaz",
-    "Ayça Ayşin Turan", "Tolga Sarıtaş", "Melisa Şenolsun", "Aslı Enver", "Ezgi Mola",
-    "Hazar Ergüçlü", "Burak Özçivit", "Tolga Çevik", "Cem Yılmaz",
-    "Kıvanç Tatlıtuğ", "Engin Altan Düzyatan", "Barış Arduç", "Hazal Kaya", "Elçin Sangu",
-    "Özge Gürel", "Serkan Çayoğlu", "Meryem Uzerli", "Halit Ergenç",
-    "Kenan İmirzalıoğlu", "Tuba Büyüküstün", "Burcu Biricik", "Gökçe Bahadır",
-    "Timothée Chalamet", "Zendaya", "Tom Holland",
-    "Chris Hemsworth", "Scarlett Johansson", "Robert Downey Jr.", "Jennifer Lawrence", "Leonardo DiCaprio",
-    "Brad Pitt", "Angelina Jolie", "Gal Gadot", "Ryan Reynolds", "Margot Robbie",
-    "Dwayne Johnson", "Emma Stone", "Chris Evans", "Natalie Portman", "Will Smith", "Miray Daner", "Sümeyye Erdoğan",
-     "Afra Saraçoğlu", "Bensu Soral", "Pelin Akil", "Gizem Karaca",
-      "Alp Navruz", "İlayda Akdoğan", "Sinem Ünsal", "Ahsen Eroğlu"
+      actors: [
+        "Çağatay Ulusoy", "Burak Deniz", "Alina Boz", "Hande Erçel",
+        "Kerem Bürsin", "Demet Özdemir", "Çağlar Ertuğrul", "Engin Akyürek", "Serenay Sarıkaya",
+        "İbrahim Çelikkol", "Fahriye Evcen", "Merve Boluğur", "Birce Akalay", "Alperen Duymaz",
+        "Ayça Ayşin Turan", "Tolga Sarıtaş", "Melisa Şenolsun", "Aslı Enver", "Ezgi Mola",
+        "Hazar Ergüçlü", "Burak Özçivit", "Tolga Çevik", "Cem Yılmaz",
+        "Kıvanç Tatlıtuğ", "Engin Altan Düzyatan", "Barış Arduç", "Hazal Kaya", "Elçin Sangu",
+        "Özge Gürel", "Serkan Çayoğlu", "Meryem Uzerli", "Halit Ergenç",
+        "Kenan İmirzalıoğlu", "Tuba Büyüküstün", "Burcu Biricik", "Gökçe Bahadır",
+        "Timothée Chalamet", "Zendaya", "Tom Holland",
+        "Chris Hemsworth", "Scarlett Johansson", "Robert Downey Jr.", "Jennifer Lawrence", "Leonardo DiCaprio",
+        "Brad Pitt", "Angelina Jolie", "Gal Gadot", "Ryan Reynolds", "Margot Robbie",
+        "Dwayne Johnson", "Emma Stone", "Chris Evans", "Natalie Portman", "Will Smith", "Miray Daner", "Sümeyye Erdoğan",
+        "Afra Saraçoğlu", "Bensu Soral", "Pelin Akil", "Gizem Karaca",
+        "Alp Navruz", "İlayda Akdoğan", "Sinem Ünsal", "Ahsen Eroğlu"
+      ],
 
-  ],
+      influencers: [
+        "Kerimcan Durmaz", "Orkun Işıtmak", "Enes Batur", "CZN Burak", "Danla Bilic",
+        "Merve Özkaynak", "Ruhi Çenet", "Cemre Solmaz", "Burak Oyunda", "Duygu Özaslan",
+        "Kafalar", "Barış Özcan", "Berkcan Güven", "Pqueen", "Nihal Candan",
+        "Yasemin Sakallıoğlu", "Nusret", "Ece Seçkin", "Berfu Yenenler",
+        "Mustafa Kemal Atatürk", "Recep Tayyip Erdoğan", "Fatih Sultan Mehmet", "Kenan Sofuoğlu", "Arda Güler",
+        "Kenan Yıldız", "Cristiano Ronaldo", "Lionel Messi", "LeBron James", "Michael Jordan",
+        "David Beckham", "Emmanuel Macron", "Donald Trump", "Elon Musk", "Jeff Bezos",
+        "Bill Gates", "Mark Zuckerberg", "Ali Koç", "Benim adım Neargiss", "İdil Yazar", "Refika", "Acun", "Kanka Youtube'dasın", "Zebani Efe", "Mika Raun", "Limonlu Limonlu"
+      ]
+    };
 
-  influencers: [
-    "Kerimcan Durmaz", "Orkun Işıtmak", "Enes Batur", "CZN Burak", "Danla Bilic",
-    "Merve Özkaynak", "Ruhi Çenet", "Cemre Solmaz", "Burak Oyunda", "Duygu Özaslan",
-    "Kafalar", "Barış Özcan", "Berkcan Güven", "Pqueen", "Nihal Candan",
-    "Yasemin Sakallıoğlu", "Nusret", "Ece Seçkin", "Berfu Yenenler",
-    "Mustafa Kemal Atatürk", "Recep Tayyip Erdoğan", "Fatih Sultan Mehmet", "Kenan Sofuoğlu", "Arda Güler",
-    "Kenan Yıldız", "Cristiano Ronaldo", "Lionel Messi", "LeBron James", "Michael Jordan",
-    "David Beckham", "Emmanuel Macron", "Donald Trump", "Elon Musk", "Jeff Bezos",
-    "Bill Gates", "Mark Zuckerberg", "Ali Koç", "Benim adım Neargiss", "İdil Yazar", "Refika", "Acun", "Kanka Youtube'dasın", "Zebani Efe", "Mika Raun", "Limonlu Limonlu" 
-  ]
-};
-
-namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influencers];
+    namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influencers];
 
     // DOM elementleri
     const lobbyDiv = document.getElementById("lobby");
@@ -55,6 +54,9 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
     const startBtn = document.getElementById("startBtn");
     const playerCountRange = document.getElementById("playerCountRange");
     const playerCountDisplay = document.getElementById("playerCountDisplay");
+    const impostorCountRange = document.getElementById("impostorCountRange");
+    const impostorCountDisplay = document.getElementById("impostorCountDisplay");
+    const impostorCountWrapper = document.getElementById("impostorCountWrapper");
     const lobbyBtn = document.getElementById("lobbyBtn");
 
     let roles = [];
@@ -92,7 +94,7 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
       if (selectedGameMode === 'impostor') {
         emoji = role === "İmpostor" ? "🔥" : "😊";
         className = role === "İmpostor" ? "impostor" : "";
-      } else {
+      } else if (selectedGameMode === 'different') {
         if (role.startsWith("FARKLI:")) {
           emoji = "😊";
           className = "different-name";
@@ -100,6 +102,9 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
           emoji = "😊";
           className = "";
         }
+      } else if (selectedGameMode === 'everyone-different') {
+        emoji = "⭐";
+        className = "everyone-different";
       }
 
       document.getElementById("btn" + index).disabled = true;
@@ -132,7 +137,11 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
       revealedCount++;
 
       if (revealedCount >= roles.length) {
-        resultDiv.textContent = "Tüm oyuncular rollerini gördü.";
+        if (selectedGameMode === 'everyone-different') {
+          resultDiv.textContent = "Tüm oyuncular rollerini gördü. Artık tahmin etmeye başlayabilirsiniz!";
+        } else {
+          resultDiv.textContent = "Tüm oyuncular rollerini gördü.";
+        }
         nextBtn.style.display = "none";
         resetBtn.style.display = "inline-block";
       }
@@ -153,10 +162,19 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
 
       if (selectedGameMode === 'impostor') {
         const commonName = namePool[Math.floor(Math.random() * namePool.length)];
-        roles = Array(count - 1).fill(commonName);
-        roles.push("İmpostor");
+        const impostorCount = parseInt(impostorCountRange.value);
+        
+        if (impostorCount >= count) {
+          alert("İmpostor sayısı toplam oyuncu sayısından az olmalı!");
+          return;
+        }
+        
+        roles = Array(count - impostorCount).fill(commonName);
+        for (let i = 0; i < impostorCount; i++) {
+          roles.push("İmpostor");
+        }
         shuffle(roles);
-      } else {
+      } else if (selectedGameMode === 'different') {
         const commonName = namePool[Math.floor(Math.random() * namePool.length)];
         let differentName;
 
@@ -167,6 +185,10 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
         roles = Array(count - 1).fill(commonName);
         roles.push("FARKLI:" + differentName);
         shuffle(roles);
+      } else if (selectedGameMode === 'everyone-different') {
+        // Herkese farklı isim verme modu
+        const shuffledNames = shuffle([...namePool]);
+        roles = shuffledNames.slice(0, count);
       }
 
       revealed = new Array(count).fill(false);
@@ -185,6 +207,20 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
     // Event Listeners
     playerCountRange.addEventListener('input', () => {
       playerCountDisplay.textContent = playerCountRange.value;
+      
+      // İmpostor sayısının maksimum değerini oyuncu sayısına göre ayarla
+      const playerCount = parseInt(playerCountRange.value);
+      const maxImpostors = Math.max(1, playerCount - 2); // En az 2 normal oyuncu olsun
+      impostorCountRange.max = maxImpostors;
+      
+      if (parseInt(impostorCountRange.value) > maxImpostors) {
+        impostorCountRange.value = maxImpostors;
+        impostorCountDisplay.textContent = maxImpostors;
+      }
+    });
+
+    impostorCountRange.addEventListener('input', () => {
+      impostorCountDisplay.textContent = impostorCountRange.value;
     });
 
     startBtn.addEventListener("click", startGame);
@@ -197,7 +233,7 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
       nextBtn.style.display = "none";
       resetBtn.style.display = "none";
       lobbyBtn.style.display = "none";
-      
+
       roles = [];
       revealed = [];
       revealedCount = 0;
@@ -222,9 +258,9 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
       customDropdown.querySelector('.selected').addEventListener('click', function(e) {
         e.stopPropagation();
         const isActive = customDropdown.classList.contains('active');
-        
+
         closeAllDropdowns();
-        
+
         if (!isActive) {
           customDropdown.classList.add('active');
           blurOverlay.style.display = 'block';
@@ -235,9 +271,9 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
       gameModeDropdown.querySelector('.game-mode-selected').addEventListener('click', function(e) {
         e.stopPropagation();
         const isActive = gameModeDropdown.classList.contains('active');
-        
+
         closeAllDropdowns();
-        
+
         if (!isActive) {
           gameModeDropdown.classList.add('active');
           blurOverlay.style.display = 'block';
@@ -259,7 +295,19 @@ namePools.all = [...namePools.singers, ...namePools.actors, ...namePools.influen
         option.addEventListener('click', function() {
           const selected = gameModeDropdown.querySelector('.game-mode-selected');
           const modeValue = this.dataset.value;
-          const modeText = modeValue === 'impostor' ? 'İmpostor Modu' : 'Farklı İsim Modu';
+          let modeText;
+          
+          if (modeValue === 'impostor') {
+            modeText = 'İmpostor Modu';
+            impostorCountWrapper.style.display = 'block';
+          } else if (modeValue === 'different') {
+            modeText = 'Farklı İsim Modu';
+            impostorCountWrapper.style.display = 'none';
+          } else if (modeValue === 'everyone-different') {
+            modeText = 'Herkese Farklı İsim';
+            impostorCountWrapper.style.display = 'none';
+          }
+          
           selected.textContent = modeText;
           selectedGameMode = modeValue;
           closeAllDropdowns();
